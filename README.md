@@ -1,1 +1,1 @@
-To Do List project by Anna Poga, 2020
+To Do List project by Anna Poga
