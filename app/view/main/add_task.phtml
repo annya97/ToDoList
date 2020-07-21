@@ -1,0 +1,17 @@
+<h2 class="text-center">Pievienot jaunu</h2>
+
+<form method="POST">
+    <input type="hidden" name="token" value="<?php echo $this->view_data['token']; ?>">
+    <div class="form-group">
+        <label for="title-add">Virsraksts:</label>
+        <input type="text" class="form-control" id="title-add" name="title" placeholder="Virsraksts"
+               maxlength="100" autofocus required>
+    </div>
+    <div class="form-group">
+        <label for="description-add">Apraksts:</label>
+        <textarea class="form-control" id="description-add" name="description" rows="4" placeholder="Apraksts"
+                  maxlength="500"></textarea>
+    </div>
+    <input type="submit" class="btn btn-primary" id="add" name="add_btn" value="Pievienot">
+    <a href="/public/all_tasks" class="back btn btn-secondary">Doties atpakaļ</a>
+</form>

@@ -1,0 +1,29 @@
+<div id="all-tasks-container">
+    <?php foreach ($this->view_data as $task): ?>
+        <div class="task-container">
+            <div class="row">
+                <div class="title-and-desc col-12 col-sm-9">
+                    <form class="form-check" method="POST">
+                        <input type="hidden" name="token" value="<?php echo $task['token']; ?>">
+                        <input type="hidden" id="title-<?php echo $task['id']; ?>-hidden"
+                               name="checkbox" value="<?php echo $task['id']; ?>">
+                        <input type="checkbox" class="form-check-input" id="title-<?php echo $task['id']; ?>"
+                               name="checkbox" value="<?php echo $task['id']; ?>"
+                               onChange="this.form.submit()" <?php echo $task['status']; ?>>
+                        <label class="form-check-label" for="title-<?php echo $task['id']; ?>">
+                            <?php echo $task['title']; ?></label>
+                    </form>
+                    <div class="description"><?php echo $task['description']; ?></div>
+                </div>
+                <div class="time-and-edit col-12 col-sm-3">
+                    <div class="time"><?php echo $task['time']; ?></div>
+                    <a href="/public/edit_task/<?php echo $task['id']; ?>" class="edit btn btn-secondary">Labot</a>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<div class="add-new-wrap">
+    <a href="/public/add_task" class="btn btn-primary" id="add-new">Pievienot jaunu</a>
+</div>
